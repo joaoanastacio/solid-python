@@ -1,20 +1,22 @@
+from order_item import OrderItem
+
 class Order:
 
     def __init__(self):
-        self.items = []
-        self.quantities = []
-        self.prices = []
+        self.price = 0
+        self.items: OrderItem = []
         self.status = "OPEN"
 
-    def add_item(self, name, quantity, price):
-        self.items.append(name)
-        self.quantities.append(quantity)
-        self.prices.append(price)
+    def add_item(self, item: OrderItem):
+        self.items.append(item)
 
     def get_total_price(self):
         total_price = 0
 
-        for index in range(len(self.prices)):
-            total_price += self.quantities[index] * self.prices[index]
+        for item in self.items:
+            total_price += item.get_price()
         
         return total_price
+
+    def finish_order(self):
+        self.status = "CLOSED"
