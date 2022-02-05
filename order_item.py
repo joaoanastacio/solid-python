@@ -9,7 +9,7 @@ class OrderItem:
         return self.__quantity * self.__price
 
     def increase_quantity(self):
-        self.__quantity = self.__quantity - 1
+        self.__quantity = self.__quantity + 1
 
     def decrease_quantity(self):
-        self.__quantity = self.__quantity + 1
+        self.__quantity = self.__quantity - 1
