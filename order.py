@@ -12,7 +12,7 @@ class Order:
         self.items.append(item)
 
     def get_total_price(self) -> float:
-        total_price = 0
+        total_price = 0.0
 
         for item in self.items:
             total_price += item.get_price()
