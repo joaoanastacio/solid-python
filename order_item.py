@@ -1,6 +1,3 @@
-from tkinter.messagebox import NO
-
-
 class OrderItem:
 
     def __init__(self, name, quantity, price) -> None:
