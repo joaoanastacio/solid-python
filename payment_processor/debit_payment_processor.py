@@ -1,8 +1,9 @@
-from payment_processor import PaymentProcessor
 from order.order import Order
-from typing import Type
 
-class DebitPaymentProcessor(PaymentProcessor):
+class DebitPaymentProcessor:
 
-    def pay(self, order: Type[Order], security_code: str):
-        pass
+    def pay(self, order: Order, security_code: str) -> None:
+        print(f"Security code {security_code} validated")
+        order.finish_order()
+        print(f"Debit payment in the amount of {order.get_total_price()} processed")
+        

@@ -1,7 +1,8 @@
-from abc import ABC, abstractmethod
+from typing import Protocol
 
-class PaymentProcessor(ABC):
+from order.order import Order
 
-    @abstractmethod
-    def pay(self, order, security_code):
-        pass
+class PaymentProcessor(Protocol):
+
+    def pay(self, order: Order, security_code: str) -> None:
+        ...
