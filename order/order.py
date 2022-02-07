@@ -1,5 +1,4 @@
 from order.order_item import OrderItem
-from typing import Type
 
 class Order:
 
@@ -8,7 +7,7 @@ class Order:
         self.items = []
         self.status = "OPEN"
 
-    def add_item(self, item: Type[OrderItem]) -> None:
+    def add_item(self, item: OrderItem) -> None:
         self.items.append(item)
 
     def get_total_price(self) -> float:
